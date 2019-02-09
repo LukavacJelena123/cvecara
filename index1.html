@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="main1.css">
+    <script src="main1.js" defer></script>
+</head>
+
+<body>
+    <div>
+        <header></header>
+
+        <main class="main">
+            <form id="forma" name="forma" method="GET" action="./orderDetails1.html" onsubmit="saveToSessionStorage()">
+                <div class="wrapper" id="wrap">
+                </div>
+                <div class="buttons">
+                <button class="inp" type="reset">reset</button>
+                <input class="inp" type="submit" value="potvrdi kupovinu">
+                </div>
+                <hr>
+
+                <article class="article">
+                    <span id="aranzman">Sadrzaj aranzmana: Ukupna cena</span>
+                    <input type="text" id="ukupno"><span> dinara</span>
+                    <br>
+                    <br>
+                    <span id="obavestenje"></span>
+                </article>
+            </form>
+
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+</body>
+
+</html>
