@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    
+</head>
+
+<body>
+    <div id="container">
+    <table id="displayOrder">
+        <caption>PORUDZBINA</caption>
+        <tr>
+            <th>NAZIV</th>
+            <th>KOLICINA</th>
+            <th>IZNOS</th>
+        </tr>
+    </table>
+    </div>
+    <script>
+        //f-ja koja uzima podatke iz Local-Stor. i upisuje u tabelu
+        var tabela = document.getElementById("displayOrder");
+        function readFromLocalStorage() {
+            var arr = window.localStorage.getItem('order').split(';');
+            for (let i = 0; i < arr.length - 1; i++) {
+                var item = arr[i].split(':');
+                var tr = document.createElement('tr');
+                tabela.appendChild(tr);
+
+                for (let y in item) {
+                    var td = document.createElement('td');
+                    if(item[y].indexOf(',')>0){
+                        let sub=item[y].indexOf(',');
+                        td.innerHTML = item[y].substring(0,sub);
+                        tr.appendChild(td);
+                    }else{
+                    td.innerHTML = item[y];
+                    tr.appendChild(td);
+                }}
+            }
+           
+            var lastData = document.createElement('tfoot');
+            tabela.appendChild(lastData);
+            var tr1 = document.createElement('tr');
+            lastData.appendChild(tr1);
+            var lData=document.createElement('td');
+            lData.setAttribute('colspan','3');
+            lData.innerHTML = `${arr[arr.length - 1]} dinara`;
+            tr1.appendChild(lData);
+
+        }
+        readFromLocalStorage();
+    </script>
+</body>
+
+</html>

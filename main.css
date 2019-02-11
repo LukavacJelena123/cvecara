@@ -1,0 +1,104 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+body {
+    background: url(slike/flowshpLogo.jpg) no-repeat center top;
+    background-size: 400px auto;
+}
+input{
+    text-align: right;
+    border-radius: 4px;
+}
+.wrapper{
+    margin-top: 150px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    border: 3px solid rgb(156, 153, 156);
+    background-color: rgb(228, 228, 226);
+    border-radius: 4px;
+}
+.wrapper>div {
+    text-align: center;
+    flex: 28%;
+    max-height: 70px;
+        padding: 5px 0;
+        margin: 5px;
+        border: 1px solid rgb(156, 153, 156);
+        background-color: white;
+        border-radius: 4px;
+}
+.wrapper>.naziv {
+    flex: 10%;
+    padding: 15px 0;
+    font-weight: 600;
+}
+.wrapper>.naziv {
+    background-color: rgb(245, 199, 227);
+}
+form {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+}
+@media all and (max-width:790px) {
+   
+    .wrapper>div {
+        text-align: center;
+        flex: 30%;
+        border: none;
+    }
+    .wrapper>.naziv {
+        flex: 1 100%;
+        border-bottom: 2px solid rgb(211, 93, 166);
+        background-color: rgb(238, 194, 238);
+        padding: 5px 0;
+    }
+    .wrapper>.naziv:hover {
+        background-color: rgb(243, 164, 243);
+    }
+}
+.buttons{
+    width: 30%;
+    margin: 10px auto;
+    border-radius: 4px;
+}
+.inp {
+    display: inline-block;
+    margin: 10px auto;
+}
+.main {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 4px;
+}
+.article {
+    width: 90%;
+    margin: 20px auto;
+}
+/* orderDetails */
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+#displayOrder{
+    flex: 100%;
+    margin: 20%
+}
+#displayOrder, th, td {
+    border: 2px solid rgb(174, 182, 191);
+    border-collapse: collapse;
+    padding: .4em;
+    text-align: center;
+  }
+#displayOrder caption{
+    margin: 2em;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+#displayOrder tfoot{
+    background-color: rgb(234, 237, 237);
+}
