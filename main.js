@@ -108,22 +108,9 @@ function orderSum(){
     document.getElementById('ukupno').value=ordSum;
 }
 
-//f-ja koja cuva podatke u Local-Stor.
-function saveToLocalStorage(){
-    var sum=document.getElementsByClassName('productSum').length;
-    var ordSum=0;
-    var str="";
-    for (let i = 0; i < sum; i++) {
-        if(prodSum[i].value>0){
-            ordSum+=(prodSum[i].value-0);
-            str+=`${products[i].name}:${quantity[i].value},cena:${prodSum[i].value};`;
-        } 
-    }
-    str+=`ukupno: ${ordSum}`;
-    window.localStorage.setItem('order',str);
-}
 
 function saveToSessionStorage(){
+    sessionStorage.clear();
     var sum=document.getElementsByClassName('productSum').length;
     var ordSum=0;
     for (let i = 0; i < sum; i++) {
