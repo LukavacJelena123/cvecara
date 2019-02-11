@@ -15,23 +15,8 @@
         <header></header>
 
         <main class="main">
-            <form id="forma" name="forma" method="GET" action="./orderDetails.html" onsubmit="saveToLocalStorage()">
-                <div class="wrapper">
-                    <div class="naziv">Ruza</div>
-                    <div>Kolicina:<br><input type="number" class="productQuantity" oninput="order(0)"></div>
-                    <div>Po komadu:<br><input type="text" class="productPrice" value="180" readonly> dinara</div>
-                    <div>Ukupna cena:<br><input type="number" class="productSum" readonly> dinara</div>
-
-                    <div class="naziv">Ljiljan</div>
-                    <div>Kolicina:<br><input type="number" class="productQuantity" oninput="order(1)"></div>
-                    <div>Po komadu:<br><input type="text" class="productPrice" value="250" readonly> dinara</div>
-                    <div>Ukupna cena:<br><input type="number" class="productSum" readonly> dinara</div>
-
-                    <div class="naziv">Gerber</div>
-                    <div>Kolicina:<br><input type="number" class="productQuantity" oninput="order(2)"></div>
-                    <div>Po komadu:<br><input type="text" class="productPrice" value="305" readonly> dinara</div>
-                    <div>Ukupna cena:<br><input type="number" class="productSum" readonly> dinara</div>
-
+            <form id="forma" name="forma" method="GET" action="./orderDetails.html" onsubmit="saveToSessionStorage()">
+                <div class="wrapper" id="wrap">
                 </div>
                 <div class="buttons">
                 <button class="inp" type="reset">reset</button>

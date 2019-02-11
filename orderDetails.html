@@ -22,27 +22,32 @@
     </table>
     </div>
     <script>
-        //f-ja koja uzima podatke iz Local-Stor. i upisuje u tabelu
-        var tabela = document.getElementById("displayOrder");
-        function readFromLocalStorage() {
-            var arr = window.localStorage.getItem('order').split(';');
-            for (let i = 0; i < arr.length - 1; i++) {
-                var item = arr[i].split(':');
+      
+        //f-ja koja uzima podatke iz Session-Stor. i upisuje u tabelu
+         var tabela = document.getElementById("displayOrder");
+
+         function readFromSessionStorage() {
+            var tabela = document.getElementById("displayOrder");
+            var arr = window.sessionStorage.getItem('order').split(';');
+            for (let i = 0; i < sessionStorage.length-1; i++) {
+                var element=JSON.parse(sessionStorage.getItem('ID'+i));
                 var tr = document.createElement('tr');
                 tabela.appendChild(tr);
 
-                for (let y in item) {
-                    var td = document.createElement('td');
-                    if(item[y].indexOf(',')>0){
-                        let sub=item[y].indexOf(',');
-                        td.innerHTML = item[y].substring(0,sub);
-                        tr.appendChild(td);
-                    }else{
-                    td.innerHTML = item[y];
+                
+                    var td = document.createElement('td');  
+                    td.innerHTML = element['name'];
+                    tr.appendChild(td); 
+
+                     var td = document.createElement('td');  
+                    td.innerHTML = element['quantity'];
                     tr.appendChild(td);
-                }}
+
+                    var td = document.createElement('td');  
+                    td.innerHTML = element['price'];
+                    tr.appendChild(td);
+                
             }
-           
             var lastData = document.createElement('tfoot');
             tabela.appendChild(lastData);
             var tr1 = document.createElement('tr');
@@ -52,8 +57,8 @@
             lData.innerHTML = `${arr[arr.length - 1]} dinara`;
             tr1.appendChild(lData);
 
-        }
-        readFromLocalStorage();
+         }
+        readFromSessionStorage();
     </script>
 </body>
 
