@@ -1,43 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="main.css">
-    <script src="main.js" defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Flowers online</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css">
+    <script src="./js/main.js" defer></script>
+    <script src="./js/createCatalog.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
 </head>
 
 <body>
-    <div>
-        <header></header>
 
-        <main class="main">
-            <form id="forma" name="forma" method="GET" action="./orderDetails.html" onsubmit="saveToSessionStorage()">
-                <div class="wrapper" id="wrap">
-                </div>
-                <div class="buttons">
-                <button class="inp" type="reset">reset</button>
-                <input class="inp" type="submit" value="potvrdi kupovinu">
-                </div>
-                <hr>
+    <header>
+        <div id="logo">
+            <h1>Flowers online</h1>
+        </div>
+        <div id="div-cart">
+            <ul>
+                <li class="submenu">
+                    <img src="img/cart.png" id="img-cart">
+                    <div id="shopping-cart">
+                        <table id="cart-content" class="u-full-width">
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
 
-                <article class="article">
-                    <span id="aranzman">Sadrzaj aranzmana: Ukupna cena</span>
-                    <input type="text" id="ukupno"><span> dinara</span>
-                    <br>
-                    <br>
-                    <span id="obavestenje"></span>
-                </article>
-            </form>
+                        <a href="#" id="clear-cart" class="button">Clear Cart</a>
+                        <span id="total"></span>
+                        <div><a type="submit" href="orderDetails.html" class="button" id="submitAPurchase">submit a purchase</a></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
 
-        </main>
-        <footer>
+    <article class="article">
+        <img src="img/roman-kraft-smanjena.jpg" alt="cvecara">
 
-        </footer>
+    </article>
+    <div class="row">
+       
     </div>
+    <h1 id="order-title">ONLINE FLOWER SHOP</h1>
+    <main id="catalog">
+
+    </main>
+    <article>
+        <h1>The Perfect Gift and Flower Delivery, Whether It's a Special Day or Any Day</h1>
+        <p>
+            <span><a href="#order-title">Flowers online</a></span> is the perfect gifting destination for any occasion,
+            whether it’s your most cherished
+            holiday or any ordinary day that calls for a spontaneous show of appreciation.
+        </p>
+        <p>
+            Our birthday flowers
+            can be customized with the vase of your choice or paired with a sweet treat to match the recipient's
+            style. From romantic displays of <a href="#Rose">red roses</a> to stargazer <a href="#Tulip">tulips</a> we
+            have flower arrangements for any
+            occasion. Your significant other will swoon from our romantic anniversary flowers and gifts, curated with
+            love by
+            our expert team. And, we're here to support your gifting needs even when the occasion isn't a joyful one.
+            Our funeral flowers are tastefully arranged and hand-delivered with care to help you express your deepest
+            sympathy during a sensitive time. Each and every gift is designed to help you send the right message.
+        </p>
+        <p>
+            If you’re gift shopping for a snack fiend, browse our gourmet baskets filled to the brim with tasty eats.
+            Want to complement that savory snack with a sweet treat? Don’t forget to order a delivery of delicious
+            dipped
+            strawberries. Complement your gourmet gift with some gorgeous blooms to sweeten the surprise. Deliver
+            flowers
+            today and brighten the week of a friend, family member, or special someone.
+        </p>
+    </article>
+    <hr>
+    <footer>
+        <h2>Jelena Lukavac</h2>
+    </footer>
 </body>
 
 </html>

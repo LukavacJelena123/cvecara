@@ -5,61 +5,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="main.css">
-    
+    <title>Order Details</title>
+    <link rel="stylesheet" href="css/orderDetailc.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Quicksand" rel="stylesheet">
+    <script src="js/orderDetails.js" defer></script>
+
 </head>
 
 <body>
-    <div id="container">
-    <table id="displayOrder">
-        <caption>PORUDZBINA</caption>
-        <tr>
-            <th>NAZIV</th>
-            <th>KOLICINA</th>
-            <th>IZNOS</th>
-        </tr>
-    </table>
-    </div>
-    <script>
-      
-        //f-ja koja uzima podatke iz Session-Stor. i upisuje u tabelu
-         var tabela = document.getElementById("displayOrder");
+    <header>
+        <h1>Flowers online</h1>
+    </header>
+    <div id="menu"></div>
+    <main>
 
-         function readFromSessionStorage() {
-            var tabela = document.getElementById("displayOrder");
-            var arr = window.sessionStorage.getItem('order').split(';');
-            for (let i = 0; i < sessionStorage.length-1; i++) {
-                var element=JSON.parse(sessionStorage.getItem('ID'+i));
-                var tr = document.createElement('tr');
-                tabela.appendChild(tr);
+        <div id="shopping-cart">
+            <table id="cart-contentTable" class="u-full-width">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <span id="total"></span>
+        </div>
 
-                
-                    var td = document.createElement('td');  
-                    td.innerHTML = element['name'];
-                    tr.appendChild(td); 
-
-                     var td = document.createElement('td');  
-                    td.innerHTML = element['quantity'];
-                    tr.appendChild(td);
-
-                    var td = document.createElement('td');  
-                    td.innerHTML = element['price'];
-                    tr.appendChild(td);
-                
-            }
-            var lastData = document.createElement('tfoot');
-            tabela.appendChild(lastData);
-            var tr1 = document.createElement('tr');
-            lastData.appendChild(tr1);
-            var lData=document.createElement('td');
-            lData.setAttribute('colspan','3');
-            lData.innerHTML = `${arr[arr.length - 1]} dinara`;
-            tr1.appendChild(lData);
-
-         }
-        readFromSessionStorage();
-    </script>
+        <div id="user-data">
+            <form action="" method="post" id="forma">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Delivery address</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>First Name:</td>
+                        <td><input type="text" id="firstName" name="firstName">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Last Name:</td>
+                        <td><input type="text" id="lastName" name="lastName">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Address:</td>
+                        <td><input type="text" id="address" name="address">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>City:</td>
+                        <td><input type="text" id="city" name="city">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Postal Code:</td>
+                        <td><input type="text" id="postalCode" name="postalCode">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Telephone No:</td>
+                        <td><input type="text" id="phone" name="phone" placeholder="06*/****-***">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>E-mail:</td>
+                        <td><input type="text" id="email" name="email">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div id="delivery">
+            <div>
+                <h4>Delivery</h4>
+                <input type="checkbox" name="delivery" value="Express Delivery" id="express">
+                <label for="delivery">300 RSD Express Delivery</label><br><br>
+                <label for="message">message for delivery service</label>
+                <textarea name="message" id="" cols="40" rows="5"></textarea>
+                <h4>Delivery date</h4>
+                <input type="date" name="date" id="date">
+            </div>
+            <div>
+                <h4>Method of payment</h4>
+                <form action="">
+                <input type="radio" name="payment" id="payOnDelivery">
+                <label for="">pay on delivery</label><br>
+                <input type="radio" name="payment" id="online">
+                <label for="account">pay online</label><br>
+                </form>
+                <div id="acc">
+                <label for="account">Account number</label>
+                <input type="text" id="account" name="account">
+                </div>
+                <span id="toPay"></span>
+            </div>
+            <div>
+                <a type="submit" href="orderDetails.html" class="button" id="submitAPurchase">submit a purchase</a>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
