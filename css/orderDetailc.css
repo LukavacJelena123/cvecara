@@ -1,0 +1,96 @@
+*{
+     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Quicksand', sans-serif; 
+}
+header > h1 {
+    font-family: 'Pacifico', cursive;
+    display: inline-block;
+    color: #185168;
+    text-align: center;
+    padding: 1em;
+}
+#menu{
+    height: 35px;
+    background: linear-gradient(to right, #185168 0%,#35bdf3 100%);
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+main > div {
+    width: 25%;
+    margin: 2em auto;
+}
+#shopping-cart {
+    min-width: 450px;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: table;
+}
+th, td {
+    padding: 12px 10px;
+    text-align: center;
+    border-bottom: 1px solid #E1E1E1;
+}
+#total {
+    font-style: italic;
+    font-weight: bold;
+    color:  #0186bb;
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 1em;
+}
+#user-data {
+    min-width: 310px;
+}
+#user-data td {
+    text-align: left;
+}
+input {
+    border-radius: 4px;
+}
+.button {
+    width: 100%;
+    background-color: #185168;
+    color: white; 
+    margin-bottom: 1rem;
+    display: inline-block;
+    height: 38px;
+    padding: 0 30px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+    cursor: pointer;
+}
+
+#delivery div {
+    margin: 1.5em auto;
+}
+
+h4 {
+    margin: .5em auto;
+    border-bottom: 1px solid #E1E1E1;
+}
+
+#acc {
+    display: none;
+}
+
+#toPay {
+    color: #035a7c;
+}
