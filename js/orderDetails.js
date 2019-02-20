@@ -66,7 +66,7 @@ const RegExps = {
     city: /^[A-ZŠĐŽĆČ][a-zšđčćž]{1,11}$/,
     postalCode: /^[1-9]\d{4}$/,
     phone: /^\d{3}\/(\d{3}-?\d{4}|\d{4}-?\d{3})$/,
-    email: /^[a-zšđčćž\-.]{3,}@[a-zšđčćž]{3,}.[a-zšđčćž]{2,3}$/
+    email: /^[a-zšđčćž\-.A-ZŠĐŽĆČ]{3,}@[a-zšđčćž]{3,}\.[a-zšđčćž]{2,3}$/
 }
 
 const formElements = {};
@@ -100,9 +100,8 @@ function userInputs(e){
                         break;
         case 'online' : checkAccount(check);
                         break;
-        case 'payOnDelivery' : { document.getElementById('acc').style.display = 'none';  
-                                document.getElementById('acc').removeEventListener('input',testAccount);
-                                break;}
+        case 'payOnDelivery' : document.getElementById('acc').style.display = 'none';  
+                                break;
     }
 }
 
@@ -110,6 +109,7 @@ function expressDelivery(check){
     let total = getTotalFromLocalStorage();
     let toPay = document.getElementById('toPay');
     if(check.checked){  
+        toPay.style.display = 'block';
         toPay.textContent =`Total to pay: ${ total + 300} RSD`;
     } else {    
         toPay.style.display = 'none';
