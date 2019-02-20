@@ -56,16 +56,16 @@ function calculateTotal(e) {
 
 function addIntoCart(flower) {
     const row = document.createElement('tr');
-
+    const {image,title,price,quantity,productSum} = flower;
     row.innerHTML = `
         <tr>
             <td>
-                 <img src="${flower.image}" width=90px>
+                 <img src="${image}" width=90px>
             </td>
-            <td>${flower.title}</td>
-            <td>${flower.price}</td>
-            <td>${flower.quantity}</td>
-            <td>${flower.productSum}</td>
+            <td>${title}</td>
+            <td>${price}</td>
+            <td>${quantity}</td>
+            <td>${productSum}</td>
             <td>
                 <a href="#" class="remove" id="${cart++}">X</a>
             </td>

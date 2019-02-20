@@ -25,7 +25,7 @@ function addToCatalog(flower){
 }
 
 function createCatalog(){
-    arr.forEach(function(element,index) {
+    arr.forEach(function(element) {
     
     let divFlower = document.createElement('div');
     divFlower.setAttribute('class','flower');
@@ -78,6 +78,7 @@ function createCatalog(){
     btn.setAttribute('id',`${element.name}`);
     btn.textContent = 'add to chart';
     divFlower.appendChild(btn);
+
     catalog.appendChild(divFlower);
 });
 }
