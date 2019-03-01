@@ -107,7 +107,8 @@ article > img {
     height: 3em;
 }
 #order-title {
-    margin: 1.5em;
+    width: 80%;
+    margin: 1.5em auto;
     text-align: center;
     transition: width 2s, height 2s, transform 2s;
 }
